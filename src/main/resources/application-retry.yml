@@ -1,0 +1,12 @@
+# 재시도 설정파일
+spring:
+  ai:
+    retry:
+      max-attempts: 10 # 최대 시도 횟수
+      backoff:
+        initial-interval: 2000ms # 첫 재시도 전 기다릴 시간
+        multiplier: 5 # 각 재시도마다 대기 시간을 5배씩 늘림
+        max-interval: # 재시도 대기시간이 늘어날 수 있는 최대 시간, 기본 3분
+      on-client-errors: false # 4xx 클라이언트 에러 코드에 대해 재시도 여부, false -> 4xx 에러 시 NonTransientAiException 발생, 재시도 하지않음
+      exclude-on-http-codes: # 지정한 상태 코드일 경우 NonTransientAiException 예외 후 재시도 하지 않음
+      on-http-codes: # 지정한 상태 코드일 경우 NonTransientAiException 예외 후 재시도 ex)429,500,502...
