@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ixiu
+    username: root
+    password: 1234
+
+  jpa:
+    defer-datasource-initialization: true
+    # ddl-auto : create 일 경우 스크립트 동작 순서에서 오류 발생
+    #
+    # false 일 경우 (default)
+    # 1. schema.sql, data.sql 실행
+    # 2. Hibernate DDL 실행 (JPA 의 ddl-auto)
+    # 따라서 schema.sql 에서 만약 insert 를 실행할 경우 테이블이 없는 상태이기 때문에 오류 발생
+    #
+    # true 일 경우
+    # 1. Hibernate DDL 실행 (JPA 의 ddl-auto)
+    # 2. schema.sql, data.sql 실행
