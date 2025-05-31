@@ -1,3 +1,6 @@
 spring:
   profiles:
-    include: api, retry, openai, db, chat-memory
+    active: prod
+    group:
+      dev: api, retry, openai, dev, chat-memory
+      prod: secret, retry, openai, chat-memory
