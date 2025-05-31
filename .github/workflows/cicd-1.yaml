@@ -74,8 +74,8 @@ jobs:
       # Docker 이미지 build & push
       - name: docker build & push
         run: |
-          docker build -f Dockerfile --tag ${{secrets.REGISTRY}}/${{vars.REPOSITORY}}:${{github.sha}} .
-          docker push ${{secrets.REGISTRY}}/${{vars.REPOSITORY}}:${{github.sha}}
+          docker build -f Dockerfile --tag ${{secrets.REGISTRY}}/${{vars.ECR_REPOSITORY}}:${{github.sha}} .
+          docker push ${{secrets.REGISTRY}}/${{vars.ECR_REPOSITORY}}:${{github.sha}}
   
 
   deploy:
@@ -117,7 +117,7 @@ jobs:
           --create-namespace \
           --namespace my-app-${{vars.SUFFIX}} \
           --set image.tag=${{github.sha}} \
-          --set image.repository=${{secrets.REGISTRY}}/${{vars.REPOSITORY}}
+          --set image.repository=${{secrets.REGISTRY}}/${{vars.ECR_REPOSITORY}}
       # 슬랙 알림
       - name: notify
         if: always()
