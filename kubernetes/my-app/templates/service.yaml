@@ -4,9 +4,9 @@ metadata:
   name: my-app
 spec:
   selector:
-    app: react
+    app: springboot
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 8080
   type: LoadBalancer
