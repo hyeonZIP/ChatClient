@@ -6,6 +6,7 @@ on:
       - src/**
       - build.gradle
       - .github/workflows/cicd-1.yaml
+      - Dockerfile
 
 jobs:
   test:
