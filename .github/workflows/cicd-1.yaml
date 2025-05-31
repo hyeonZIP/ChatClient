@@ -60,7 +60,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build -x test
         env:
-          OPENAI_API_KEY: ${{secrets.API}}
+          api: ${{secrets.OPEN_API_KEY}}
       # AWS 권한 획득
       - name: Configure AWS Credentials
         id: credentials
