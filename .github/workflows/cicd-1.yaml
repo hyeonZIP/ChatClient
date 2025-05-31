@@ -11,6 +11,7 @@ on:
     paths:
       - src/**
       - build.gradle
+      - .github/workflows/cicd-1.yaml
 
 jobs:
   test:
