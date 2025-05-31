@@ -19,10 +19,9 @@ public class ChatClientController {
      * 논스트리밍 요청(모든 답변이 한번에 옴)
      */
     @GetMapping("/ai")
-    String generation(String userInput, String userId) {
+    String generation(String userInput) {
 
         return this.chatClient.prompt()
-                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, userId))
                 .user(userInput)
                 .call()
                 .content();
@@ -34,7 +33,7 @@ public class ChatClientController {
     @GetMapping(value = "/ai/stream", produces = "text/plain;charset=UTF-8")
     Flux<String> streamGeneration(String userInput, String userId) {
         return this.chatClient.prompt()
-                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, userId))
+//                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, userId))
                 .user(userInput)
                 .stream()
                 .content();

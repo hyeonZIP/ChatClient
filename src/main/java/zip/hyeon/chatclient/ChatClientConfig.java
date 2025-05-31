@@ -26,29 +26,29 @@ public class ChatClientConfig {
 
         return chatClientBuilder
                 .defaultSystem("너는 사용자가 요청한 상품 정보 또는 표현에 대해 유사항 상품을 추천하는 AI 에이전트야.")
-                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory()).build())
+//                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory()).build())
                 .build();
     }
 
-    /**
-     * ChatMemory Build
-     */
-    @Bean
-    public ChatMemory chatMemory(){
-        return MessageWindowChatMemory.builder()
-                .chatMemoryRepository(chatMemoryRepository())
-                .maxMessages(10)
-                .build();
-    }
-
-    /**
-     * ChatMemoryRepository Build
-     */
-    @Bean
-    public ChatMemoryRepository chatMemoryRepository(){
-        return JdbcChatMemoryRepository.builder()
-                .jdbcTemplate(jdbcTemplate)
-                .dialect(new MysqlChatMemoryRepositoryDialect())
-                .build();
-    }
+//    /**
+//     * ChatMemory Build
+//     */
+//    @Bean
+//    public ChatMemory chatMemory(){
+//        return MessageWindowChatMemory.builder()
+//                .chatMemoryRepository(chatMemoryRepository())
+//                .maxMessages(10)
+//                .build();
+//    }
+//
+//    /**
+//     * ChatMemoryRepository Build
+//     */
+//    @Bean
+//    public ChatMemoryRepository chatMemoryRepository(){
+//        return JdbcChatMemoryRepository.builder()
+//                .jdbcTemplate(jdbcTemplate)
+//                .dialect(new MysqlChatMemoryRepositoryDialect())
+//                .build();
+//    }
 }
