@@ -16,4 +16,7 @@ spec:
         - name: springboot-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           ports:
-              - containerPort: 8080
+            - containerPort: 8080
+          env:
+            - name: OPENAI_API_KEY
+              value: {{ .Values.env.OPENAI_API_KEY | quote }}
