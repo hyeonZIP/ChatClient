@@ -2,5 +2,5 @@ spring:
   profiles:
     active: prod
     group:
-      dev: api, retry, openai, dev, chat-memory
+      dev: api, retry, openai, chat-memory
       prod: secret, retry, openai, chat-memory

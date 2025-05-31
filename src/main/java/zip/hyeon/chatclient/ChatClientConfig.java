@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Configuration
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ChatClientConfig {
 
-    private final JdbcTemplate jdbcTemplate;
+//    private final JdbcTemplate jdbcTemplate;
 
     /**
      * ChatClient Build
