@@ -35,6 +35,10 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      # 테스트 권한 설정
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       # 단위 테스트 실행
       - name: Run tests
         run: ./gradlew test
