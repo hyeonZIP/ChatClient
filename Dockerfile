@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-slim
+FROM openjdk:17-oracle
 
 LABEL authors="aminez"
 LABEL description="SpringBoot LLM Application"
