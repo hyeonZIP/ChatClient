@@ -8,5 +8,5 @@ spring:
             # embedded(default) : 임베디드환경(인메모리환경)에서만 스키마 초기화
             # always : 항상 스키마 초기화
             # never : 스키마 초기화 비활성화
-            schema: classpath:/schema/schema-mysql.sql # 동작시킬 스키마 경로
+            schema: classpath:/schema/schema-postgresql.sql # 동작시킬 스키마 경로
             platform: # 감지된 DB 명 동적 할당 ex) Driver
