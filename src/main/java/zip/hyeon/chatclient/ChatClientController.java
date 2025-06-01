@@ -33,7 +33,7 @@ public class ChatClientController {
     @GetMapping(value = "/ai/stream", produces = "text/plain;charset=UTF-8")
     Flux<String> streamGeneration(String userInput, String userId) {
         return this.chatClient.prompt()
-//                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, userId))
+                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, userId))
                 .user(userInput)
                 .stream()
                 .content();
