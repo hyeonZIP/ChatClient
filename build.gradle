@@ -21,12 +21,6 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
-    maven { url 'https://repo.spring.io/snapshot' }
-    maven {
-        name = 'Central Portal Snapshots'
-        url = 'https://central.sonatype.com/repository/maven-snapshots/'
-    }
 }
 
 ext {
@@ -34,27 +28,24 @@ ext {
 }
 
 dependencies {
-    // JdbcChatMemoryRepository
-    implementation 'org.springframework.ai:spring-ai-starter-model-chat-memory-repository-jdbc'
+    // Chat Memory
+    implementation 'org.springframework.ai:spring-ai-starter-model-chat-memory-repository-neo4j'
 
-    // open ai
+    // Vector DB
+    implementation 'org.springframework.ai:spring-ai-starter-vector-store-neo4j'
+
+    // Open AI
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
 
     // Spring Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // Spring Data Jpa
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Spring Data Neo4j
+    implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
-    // Postgresql
-    runtimeOnly 'org.postgresql:postgresql'
-
-    // PGvector
-    implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
